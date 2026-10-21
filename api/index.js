@@ -7,7 +7,7 @@ const TG_API_KEY = "FIGHTER";
 app.get('/', (req, res) => {
   res.json({
     status: "running ✅",
-    endpoint: "/advanced/aadhar2info?q=@username",
+    endpoint: "/advanced/aadhr2info?q=@username",
     developer: "@Boss_Hcrr"
   });
 });
