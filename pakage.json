@@ -1,0 +1,12 @@
+{
+  "name": "aadhr2info-api",
+  "version": "1.0.0",
+  "description": "Adhar to info lookup API",
+  "main": "api/index.js",
+  "scripts": {
+    "start": "node api/index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
