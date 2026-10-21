@@ -13,14 +13,14 @@ app.get('/', (req, res) => {
 });
 
 // ---------------- Telegram to Number Route ----------------
-app.get('/advanced/tg2num', async (req, res) => {
+app.get('/advanced/aadhr2info', async (req, res) => {
   try {
     const { q } = req.query;
 
     if (!q) {
       return res.status(400).json({
         status: false,
-        error: "Aadhar number (q) is required"
+        error: "Aadhr number (q) is required"
       });
     }
 
