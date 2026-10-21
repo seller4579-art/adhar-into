@@ -7,25 +7,25 @@ const TG_API_KEY = "FIGHTER";
 app.get('/', (req, res) => {
   res.json({
     status: "running ✅",
-    endpoint: "/advanced/aadhr2info?q=@username",
+    endpoint: "/advanced/aadhar2info?q=12345789012",
     developer: "@Boss_Hcrr"
   });
 });
 
-// ---------------- Telegram to Number Route ----------------
-app.get('/advanced/aadhr2info', async (req, res) => {
+// ---------------- Aadhar to Info Route ----------------
+app.get('/advanced/aadhar2info', async (req, res) => {
   try {
     const { q } = req.query;
 
     if (!q) {
       return res.status(400).json({
         status: false,
-        error: "Aadhr number (q) is required"
+        error: "Aadhar number (q) is required"
       });
     }
 
     const response = await fetch(
-      `https://sahilxher.madewith.me/api/aadhr?key=${aadhar_API_KEY}&q=${encodeURIComponent(q)}`
+      https://sahilxher.madewith.me/api/aadhr?key=${TG_API_KEY}&q=${encodeURIComponent(q)}
     );
 
     if (!response.ok) {
@@ -35,7 +35,7 @@ app.get('/advanced/aadhr2info', async (req, res) => {
       });
     }
 
-    const data = await response.json() || {};
+    const data = (await response.json()) || {};
     data.developer = "@Boss_Hcrr";
 
     return res.json(data);
